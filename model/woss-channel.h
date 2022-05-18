@@ -24,7 +24,7 @@
 #define WOSS_CHANNEL_H
 
 
-#include "ns3/uan-channel.h"
+#include "ns3/UanChannelVector.h"
 #include "woss-prop-model.h"
 
 namespace ns3 {
@@ -37,7 +37,7 @@ namespace ns3 {
  * the WossChannel class computes the received power and the transmission delay by manipulating
  * the UanPdp object returned by the associated WossPropModel object.
  */
-class WossChannel : public UanChannel
+class WossChannel : public UanChannelVector
 {
 public:
   WossChannel (); //!< Default Constructor

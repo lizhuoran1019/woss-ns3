@@ -54,7 +54,7 @@ TypeId
 WossChannel::GetTypeId ()
 {
   static TypeId tid = TypeId ("ns3::WossChannel")
-    .SetParent<UanChannel> ()
+    .SetParent<UanChannelVector> ()
     .SetGroupName ("Woss")
     .AddConstructor<WossChannel> ()
     .AddAttribute ("ChannelEqSnrThresholdDb",
@@ -68,7 +68,7 @@ WossChannel::GetTypeId ()
 }
 
 WossChannel::WossChannel ()
-  : UanChannel (),
+  : UanChannelVector(),
     m_channelEqSnrThresDb (WOSS_CHANNEL_SNR_EQ_THRES_DB),
     // -infinite snr ==> first tap
     m_wossPropModel (NULL)
@@ -220,7 +220,8 @@ WossChannel::TxPacket (Ptr<UanTransducer> src, Ptr<Packet> packet,
                                           rxPowerDb,
                                           txMode,
 //                                       (*j));
-                                          normalizedPdp);
+                                          normalizedPdp,
+										  std::make_pair(senderMobility, rcvrMobility));
 
           if ( j != uanPdpVector.end () )
             {
