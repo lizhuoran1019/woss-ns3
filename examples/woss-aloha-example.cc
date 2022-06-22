@@ -72,6 +72,7 @@ Experiment::Experiment ()
 void
 Experiment::InitWossHelper (Ptr<WossHelper> wossHelper, Ptr<WossPropModel> wossProp, woss::CoordZ &txCoordZ)
 {
+	wossHelper->SetAttribute ("WossBellhopPath", StringValue ("/home/lzr/at/Bellhop/"));
   wossHelper->SetAttribute ("ResDbUseBinary", BooleanValue (false));
   wossHelper->SetAttribute ("ResDbUseTimeArr", BooleanValue (true));
   wossHelper->SetAttribute ("ResDbFilePath", StringValue ("./woss-aloha-example-output/res-db/"));
