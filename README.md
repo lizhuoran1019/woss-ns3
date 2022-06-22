@@ -28,3 +28,5 @@ It can also be manually installed:
 - for info on how to install all the required libraries with the suggested paths, please check http://telecom.dei.unipd.it/ns/woss/doxygen/installation.html
 
 *Any issue should be reported via github Issue tracker*.
+
+Add CMakeLists.txt
