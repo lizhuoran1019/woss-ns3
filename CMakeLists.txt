@@ -2,6 +2,8 @@ add_definitions(-DNS3_WOSS_SUPPORT -DWOSS_MULTITHREAD)
 
 link_libraries(WOSS)
 
+include_directories(/opt/WOSS/woss /opt/WOSS/woss/woss_def /opt/WOSS/woss/woss_db)
+
 build_lib(
         LIBNAME woss-ns3
         SOURCE_FILES
